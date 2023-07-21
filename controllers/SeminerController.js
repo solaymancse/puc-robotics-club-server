@@ -1,12 +1,7 @@
 const Seminer = require("../Models/Seminer");
 const fs = require("fs");
-const cloudinary = require("cloudinary").v2;
-
-cloudinary.config({
-  cloud_name: process.env.CLOUD_NAME,
-  api_key: process.env.CLOUD_API_KEY,
-  api_secret: process.env.CLOUD_SECRET_KEY,
-});
+const cloudinary = require('../config/cloudinary');
+const cloudinaryconfig = require('../config/cloudinary');
 
 // create new seminer
 const createSeminer = async (req, res) => {

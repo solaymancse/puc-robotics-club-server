@@ -23,8 +23,13 @@ const getALlSession =  async (req, res)=> {
 const getLastSession =  async (req, res)=> {
     try {
         const sessions = await Session.find().sort({ "year": -1}).limit(1);
+        if (sessions.length > 0) {
+            res.status(200).json(sessions[0]._id);
+          } else {
+            res.status(404).json({ error: "No sessions found" });
+          }
        
-        res.status(200).json(sessions);
+        
     
     } catch (error) {
         res.status(400).json(err);

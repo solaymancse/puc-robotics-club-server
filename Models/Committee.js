@@ -15,6 +15,7 @@ const CommitteeSchema = new mongoose.Schema({
     },
     designation:{
         type: String,
+        default:null,
        
     },
     sessionId:{
